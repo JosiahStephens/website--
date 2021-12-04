@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <meta name="description" content="information about dharks">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".menu-icon").addEventListener("click", () => {
+        document.querySelector(".main-menu").classList.toggle("menu-show");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header class="main-menu">
+    <div class="menu-icon">
+      <svg viewbox="0 0 60 60">
+        <line x1="5px" y1="30px" x2="55px" y2="30px" />
+        <line x1="5px" y1="30px" x2="55px" y2="30px" />
+        <line x1="15px" y1="30px" x2="45px" y2="30px" />
+        <line x1="15px" y1="30px" x2="45px" y2="30px" />
+        <line x1="5px" y1="30px" x2="55px" y2="30px" />
+      </svg>
+    </div>
+    <nav>
+      <h2 class="hidden">Main Menu</h2>
+      <ul>
+        <li class="grow"><a href="../">Home</a></li>
+        <li><a class="dead-link">Form</a></li>
+        <li class="grow"><a href="../about/">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article class="panel form-panel">
+      <div class="text-wrap no-padding">
+        <h1>Dhark Support</h1>
+        <form name="dharks">
+          <label for="name">Full name:</label>
+          <input type="text" name="name" id="name">
+
+          <label for="email">Email address:</label>
+          <input type="email" name="email" id="email" required>
+
+          <label for="SSN">Social Security Number:</label>
+          <input type="password" name="SSN" id="SSN">
+
+          <label for="maiden-name">What is your mother's maiden name?</label>
+          <input type="text" name="maiden-name" id="maiden-name">
+
+          <label for="pet-name">What is the name of a childhood pet?</label>
+          <input type="text" name="pet-name" id="pet-name">
+
+          <label for="other">Any other security answers we need to verify your bank account:</label>
+          <input type="text" name="other-questions" id="other-questions">
+
+          <fieldset>
+            <legend>Which of the following would you be willing to do to support the dharks? (Check all that apply)
+            </legend>
+
+            <input type="checkbox" id="advertise" name="support" value="advertise">
+            <label for="advertise">Tell all of my friends about them.</label>
+
+            <input type="checkbox" id="proselyte" name="support" value="proselyte">
+            <label for="proselyte">Get two people to support dharks. Then they'll each get two people to support
+              dharks. After that all of those people will each get two more people...</label>
+
+            <input type="checkbox" id="volunteer" name="support" value="volunteer">
+            <label for="volunteer">Volunteer at the local dhark shelter.</label>
+
+            <input type="checkbox" id="rally" name="support" value="rally">
+            <label for="rally">Attend a dhark rally.</label>
+
+            <input type="checkbox" id="mission" name="support" value="mission">
+            <label for="mission">Go on a two-year service mission to preach about dharks.</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>How much are you willing to donate to the dhark cause?</legend>
+
+            <input type="radio" name="monies" id="ten" value="$10">
+            <label for="ten">$10.00</label>
+
+            <input type="radio" name="monies" id="hundred" value="$100">
+            <label for="hundred">$100.00</label>
+
+            <input type="radio" name="monies" id="thousand" value="$1,000">
+            <label for="thousand">$1,000.00</label>
+
+            <input type="radio" name="monies" id="million" value="1,000,000">
+            <label for="million">$1,000,000.00</label>
+          </fieldset>
+
+          <label for="comments">Additional comments:</label>
+          <textarea name="comments" id="comments" rows="10"
+            placeholder="Anything else you would like to say?"></textarea>
+          <div class="center-on-mobile">
+            <button type="submit" class="button">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="image-wrap shark-svg">
+        <img src="../images/shark-fin.svg" alt="shark fin">
+      </div>
+      <div>
+        <div class="loading hidden">
+          <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+        <p class="success-message hidden">You have helped the dharks today.</p>
+      </div>
+    </article>
+  </main>
+  <script>
+    // enter the URL for your Google Sheet 
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbxX5PTtVSZCOOyRL09XjU6L_IwCwTN2gOdbZN6q1N4ZJ0_i70eQA47VrAVNhU8wMLor/exec'
+
+    // add a name attribute to your <form> and enter its value here 
+    const form = document.forms['dharks']
+
+    // enter the value of your checkboxes' name attribute
+    const checkboxName = "support"
+
+    // set these to your loader and message classes
+    const loading = document.querySelector('.loading')
+    const successMessage = document.querySelector('.success-message')
+    const errorMessage = document.querySelector('.error-message')
+
+    // this will run when the submit button is clicked
+    form.addEventListener('submit', event => {
+      // stops default form handling so we can submit it to Google Sheets instead
+      event.preventDefault()
+
+      // show the loader and hide form
+      form.classList.add('hidden')
+      loading.classList.remove('hidden')
+
+      // collect the form values into an object that can be sent to Google Sheets
+      let fd = new FormData(form);
+
+      /* If more than one checkbox is selected, the form will have multiple keys 
+         (checkbox name). Only the first checkbox value would be entered into 
+         Google Sheets. 
+         To get around this, concat all the selected checkbox values into a single 
+         string and send that value */
+
+      // grab all the selected values stored as key/value pairs of checkboxName/value
+      let checkBoxValues = fd.getAll(checkboxName)
+
+      // then delete them from the formData object
+      fd.delete(checkboxName);
+
+      // create a string
+      let text = ""
+      if (checkBoxValues.length <= 2) {
+        text = checkBoxValues.join(" and ")
+      } else {
+        let end = checkBoxValues.pop();
+        text = checkBoxValues.join(", ");
+        text += ", and " + end;
+      }
+      // add the key/value pair checkboxName/text back to the formData object
+      fd.append(checkboxName, text);
+
+      // use an asynchronous request to POST your formData object to your Google Sheet
+      fetch(scriptURL, {
+          method: 'POST',
+          body: fd,
+        })
+        // if response ok, show success message and hide loader, else display error
+        .then(response => {
+          loading.classList.add('hidden')
+          if (response.ok) {
+            console.log('Success!', response)
+            successMessage.classList.remove('hidden')
+          } else {
+            console.log("Something has gone terribly wrong and I'm rather afraid I don't know what to do.",
+              response)
+            errorMessage.classList.remove('hidden')
+          }
+        })
+        // if error, show error message and hide loader
+        .catch(error => {
+          console.error('Error!', error.message)
+          errorMessage.classList.remove('hidden')
+          loading.classList.add('hidden')
+        })
+    })
+  </script>
+</body>
+
+</html>
