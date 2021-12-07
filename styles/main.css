@@ -575,7 +575,7 @@ button {
 
 .contact {
   padding: 2rem;
-  background-color: var(--light-gray);
+  background-color: var(--koromiko);
 }
 
 /* cards */
@@ -834,7 +834,14 @@ aside article {
   .button:focus {
     background-color: var(--dark-au-chico);
     border: 2px solid var(--dark-au-chico);
-    /* box-shadow: 0 0 0 2px var(--dark-au-chico); */
+  }
+
+  .project-card:nth-child(4) .panel {
+    flex-direction: row;
+  }
+
+  .project-card:nth-child(4) .panel .vertical-center {
+    order: 1;
   }
 }
 
@@ -868,7 +875,7 @@ aside article {
   }
 
   .contact {
-    margin-top: 0;
+    margin-top: 3rem;
   }
 
   .about {
@@ -921,10 +928,12 @@ aside article {
     grid-row: 2;
     grid-column: 1;
   }
+
   .project-card:nth-child(4) {
     grid-row: 3;
     grid-column: 1 / span 3;
   }
+
   .button-wrap {
     flex-wrap: nowrap;
   }
